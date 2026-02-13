@@ -1,0 +1,45 @@
+name: Release Linux Binaries
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Cross
+        run: cargo install cross
+
+      - name: Build x86_64
+        run: |
+          rustup target add x86_64-unknown-linux-musl
+          cross build --target x86_64-unknown-linux-musl --release
+
+      - name: Build aarch64
+        run: |
+          rustup target add aarch64-unknown-linux-musl
+          cross build --target aarch64-unknown-linux-musl --release
+
+      - name: Create release archives
+        run: |
+          mkdir -p dist
+          cp target/x86_64-unknown-linux-musl/release/meditracker dist/
+          tar -czvf dist/meditracker-x86_64-unknown-linux-musl.tar.gz -C dist meditracker
+          cp target/aarch64-unknown-linux-musl/release/meditracker dist/
+          tar -czvf dist/meditracker-aarch64-unknown-linux-musl.tar.gz -C dist meditracker
+
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/meditracker-x86_64-unknown-linux-musl.tar.gz
+            dist/meditracker-aarch64-unknown-linux-musl.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
