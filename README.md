@@ -107,4 +107,5 @@ meditracker/
 
 ## License
 
-MIT
+project made for HI-B-1: Digital Business (WS25/26) DIT
+
