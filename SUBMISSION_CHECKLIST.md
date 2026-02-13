@@ -8,7 +8,7 @@ Before submitting, complete these steps:
 
 ## 2. Upload to GitHub
 
-1. Create a new repository on GitHub (e.g. `meditracker`).
+1. Create a new repository on GitHub (e.g. `medicationTracker`).
 2. Push this project to it.
 
 ## 3. Build and publish Linux binaries
@@ -28,7 +28,7 @@ Wait for the workflow to finish, then download the `.tar.gz` files from the Rele
 1. A `docs/` folder is already included with the website content.
 2. Go to your repo → Settings → Pages.
 3. Source: Deploy from branch → Branch: `main` → Folder: `/docs`.
-4. Your site will be at `https://umarayyaz26.github.io/meditracker/`.
+4. Your site will be at `https://umarayyaz26.github.io/medicationTracker/`.
 
 **Option B — Manual:**
 Include the `website/` folder contents in your submission as the "content of your website."

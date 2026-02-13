@@ -5,8 +5,8 @@ edition = "2021"
 authors = ["Umar"]
 description = "A fast, reliable CLI tool for healthcare professionals to manage patient and medication records. Features JSON persistence, CSV export, and cross-platform Linux binaries."
 license = "MIT"
-repository = "https://github.com/umarayyaz26/meditracker"
-homepage = "https://umarayyaz26.github.io/meditracker"
+repository = "https://github.com/umarayyaz26/medicationTracker"
+homepage = "https://umarayyaz26.github.io/medicationTracker"
 keywords = ["cli", "healthcare", "medication", "patient", "csv"]
 categories = ["command-line-utilities"]
 

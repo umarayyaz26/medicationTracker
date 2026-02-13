@@ -4,8 +4,8 @@ A fast, reliable CLI tool for healthcare professionals to manage patient and med
 
 ## Links
 
-- **GitHub Repository:** https://github.com/umarayyaz26/meditracker
-- **Website (advertisement):** https://umarayyaz26.github.io/meditracker
+- **GitHub Repository:** https://github.com/umarayyaz26/medicationTracker
+- **Website (advertisement):** https://umarayyaz26.github.io/medicationTracker
 
 ---
 
@@ -22,22 +22,22 @@ A fast, reliable CLI tool for healthcare professionals to manage patient and med
 
 ### Pre-built binaries (Linux)
 
-Download from [Releases](https://github.com/umarayyaz26/meditracker/releases):
+Download from [Releases](https://github.com/umarayyaz26/medicationTracker/releases):
 
 ```bash
 # x86_64
-curl -sL https://github.com/umarayyaz26/meditracker/releases/latest/download/meditracker-x86_64-unknown-linux-musl.tar.gz | tar xz
+curl -sL https://github.com/umarayyaz26/medicationTracker/releases/latest/download/meditracker-x86_64-unknown-linux-musl.tar.gz | tar xz
 chmod +x meditracker && ./meditracker --help
 
 # aarch64 (ARM)
-curl -sL https://github.com/umarayyaz26/meditracker/releases/latest/download/meditracker-aarch64-unknown-linux-musl.tar.gz | tar xz
+curl -sL https://github.com/umarayyaz26/medicationTracker/releases/latest/download/meditracker-aarch64-unknown-linux-musl.tar.gz | tar xz
 ```
 
 ### From source
 
 ```bash
-git clone https://github.com/umarayyaz26/meditracker
-cd meditracker
+git clone https://github.com/umarayyaz26/medicationTracker
+cd medicationTracker
 cargo build --release
 ```
 
