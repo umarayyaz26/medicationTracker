@@ -30,7 +30,7 @@ curl -sL https://github.com/umarayyaz26/medicationTracker/releases/latest/downlo
 chmod +x meditracker && ./meditracker --help
 
 # aarch64 (ARM)
-curl -sL https://github.com/umarayyaz26/medicationTracker/releases/latest/download/meditracker-aarch64-unknown-linux-musl.tar.gz | tar xz
+curl -sL https://github.com/umarayyaz26/medicationTracker/releases/latest/download/meditracker-aarch64-unknown-linux-gnu.tar.gz | tar xz
 ```
 
 ### From source
