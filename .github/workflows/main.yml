@@ -24,22 +24,23 @@ jobs:
 
       - name: Build aarch64
         run: |
-          rustup target add aarch64-unknown-linux-musl
-          cross build --target aarch64-unknown-linux-musl --release
+          rustup target add aarch64-unknown-linux-gnu
+          sudo apt-get update && sudo apt-get install -y gcc-aarch64-linux-gnu
+          CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER=aarch64-linux-gnu-gcc cargo build --target aarch64-unknown-linux-gnu --release
 
       - name: Create release archives
         run: |
           mkdir -p dist
           cp target/x86_64-unknown-linux-musl/release/meditracker dist/
           tar -czvf dist/meditracker-x86_64-unknown-linux-musl.tar.gz -C dist meditracker
-          cp target/aarch64-unknown-linux-musl/release/meditracker dist/
-          tar -czvf dist/meditracker-aarch64-unknown-linux-musl.tar.gz -C dist meditracker
+          cp target/aarch64-unknown-linux-gnu/release/meditracker dist/
+          tar -czvf dist/meditracker-aarch64-unknown-linux-gnu.tar.gz -C dist meditracker
 
       - name: Upload to Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
             dist/meditracker-x86_64-unknown-linux-musl.tar.gz
-            dist/meditracker-aarch64-unknown-linux-musl.tar.gz
+            dist/meditracker-aarch64-unknown-linux-gnu.tar.gz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
